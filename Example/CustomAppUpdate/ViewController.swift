@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CustomAppUpdate
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if AppUpdater.isUpdateAvailable(){
+            AppUpdater.showUpdateAlert(nav: self.navigationController ?? UINavigationController(), isForceBool: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
