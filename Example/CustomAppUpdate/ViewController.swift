@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if AppUpdater.isUpdateAvailable(){
-            AppUpdater.showUpdateAlert(nav: self.navigationController ?? UINavigationController(), isForceBool: false)
+            AppUpdater.showUpdateAlert(nav: self.navigationController ?? UINavigationController(), isForceBool: false,asset: "")
         }
     }
 

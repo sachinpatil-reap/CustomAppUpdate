@@ -44,7 +44,7 @@ public class AppUpdater: NSObject {
                                       title: String = "Update",
                                       message: String? = nil,
                                       cancel: String = "Cancel",
-                                      ok: String = "OK",nav:UINavigationController,isForceBool: Bool) {
+                                      ok: String = "OK",nav:UINavigationController,isForceBool: Bool,asset: String) {
         guard let applicationName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String, let data = versionAndDownloadUrl() else { return }
         
         var alert: UIAlertController?
@@ -56,6 +56,7 @@ public class AppUpdater: NSObject {
             popupVC.dataVersion = "\(data.version)"
             popupVC.dataURL = "\(data.downloadUrl)"
             popupVC.isForce = isForceBool
+            popupVC.image = asset
             popupVC.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
             nav.present(popupVC, animated: true, completion: nil)
             

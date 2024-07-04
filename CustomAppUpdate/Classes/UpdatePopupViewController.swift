@@ -4,9 +4,9 @@ class UpdatePopupViewController: UIViewController {
     var dataVersion:String = ""
     var dataURL:String = ""
     var isForce: Bool = false
+    var image:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("SACHIN")
         setupPopup()
     }
 
@@ -21,7 +21,7 @@ class UpdatePopupViewController: UIViewController {
 
         // Create the image view for the rocket
         let rocketImageView = UIImageView()
-        rocketImageView.image = UIImage(named: "rocket") // Assuming you have a rocket image in your assets
+        rocketImageView.image = UIImage(named: image) // Assuming you have a rocket image in your assets
         rocketImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(rocketImageView)
 
