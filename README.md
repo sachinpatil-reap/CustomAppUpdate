@@ -34,9 +34,11 @@ import CustomAppUpdate
 ```
 
 Step 2: 
-Initialise & establishConnection connection of socket :
+Initialise AppUpdater setup and set key parameters.for Custom pop up asset just add image name and for force update just setup true value as Boolean.
 ```swift
-SachinCustomSocketManager.shared.establishConnection(isLogin: true, userId: “Custom_User_Id”)
+if AppUpdater.isUpdateAvailable(){
+            AppUpdater.showUpdateAlert(nav: self.navigationController ?? UINavigationController(), isForceBool: false,asset: "{Add-Image-Name for Custom otherwise Empty value}")
+        }
 ```
 
 ## Author
